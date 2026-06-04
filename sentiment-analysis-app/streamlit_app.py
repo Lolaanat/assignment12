@@ -96,17 +96,10 @@ st.set_page_config(
 
 st.title("Analisis Sentimen Review 🌟")
 
-st.write(
-    "Ini merupakan web analisis sentimen Leora Natania - 2702217195."
-    heigh=200
-)
-
-st.write(
-    "Masukkan kalimat atau review untuk mengetahui sentimennya."
-)
+st.caption("Ini merupakan web analisis sentimen Leora Natania - 2702217195.")
 
 text = st.text_area(
-    "Masukkan Kalimat / Review",
+    "Masukkan kalimat atau review untuk mengetahui sentimennya.",
     height=150
 )
 
