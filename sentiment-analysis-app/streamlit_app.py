@@ -94,9 +94,10 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("😊 Analisis Sentimen Review")
+st.title("Analisis Sentimen Review 🌟")
 
 st.write(
+    "Ini merupakan web analisis sentimen Leora Natania - 2702217195."
     "Masukkan kalimat atau review untuk mengetahui sentimennya."
 )
 
@@ -135,6 +136,6 @@ if st.button("Prediksi"):
             # 1 = Negatif
 
             if pred == 0:
-                st.success("😔 Sentimen Negatif")
+                st.error("😔 Sentimen Negatif")
             else:
-                st.error("😌 Sentimen Positif")
+                st.success("😌 Sentimen Positif")
