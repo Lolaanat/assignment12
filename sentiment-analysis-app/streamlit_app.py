@@ -9,9 +9,16 @@ Original file is located at
 
 import streamlit as st
 import pickle
+import os
 
-# Load model
-with open("sentiment_model.pkl", "rb") as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_PATH = os.path.join(
+    BASE_DIR,
+    "sentiment_model.pkl"
+)
+
+with open(MODEL_PATH, "rb") as f:
     model_package = pickle.load(f)
 
 vectorizer = model_package["vectorizer"]
