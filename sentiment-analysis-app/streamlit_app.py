@@ -29,7 +29,14 @@ STOPWORDS_ID = {
     'dengan','untuk','adalah','ada','atau','juga',
     'pada','dalam','saya','kami','kita','anda',
     'mereka','dia','ia','nya','akan','sudah',
-    'telah','bukan','jangan'
+    'telah'
+}
+
+NEGATIVE_WORDS = {
+    "tidak",
+    "tak",
+    "bukan",
+    "jangan"
 }
 
 
@@ -58,6 +65,24 @@ def preprocess_text(text):
     ]
 
     return " ".join(tokens)
+
+
+# =====================================================
+# CEK NEGASI
+# =====================================================
+
+def contains_negative_word(text):
+
+    text = text.lower()
+
+    words = text.split()
+
+    for word in words:
+        if word in NEGATIVE_WORDS:
+            return True
+
+    return False
+
 
 # =====================================================
 # UI
@@ -88,22 +113,28 @@ if st.button("Prediksi"):
 
     if text.strip() == "":
         st.warning("Silakan masukkan kalimat terlebih dahulu.")
+
     else:
 
-        clean_text = preprocess_text(text)
+        # RULE PRIORITAS
+        # Jika ada kata negasi -> langsung negatif
 
-        text_vec = vectorizer.transform([clean_text])
+        if contains_negative_word(text):
 
-        pred = model.predict(text_vec)[0]
-
-        # ===============================
-        # SESUAIKAN LABEL DATASETMU
-        # ===============================
-        # Jika:
-        # 0 = Positif
-        # 1 = Negatif
-
-        if pred == 0:
-            st.success("😌 Sentimen Positif")
-        else:
             st.error("😔 Sentimen Negatif")
+
+        else:
+
+            clean_text = preprocess_text(text)
+
+            text_vec = vectorizer.transform([clean_text])
+
+            pred = model.predict(text_vec)[0]
+
+            # 0 = Positif
+            # 1 = Negatif
+
+            if pred == 0:
+                st.success("😌 Sentimen Positif")
+            else:
+                st.error("😔 Sentimen Negatif")
