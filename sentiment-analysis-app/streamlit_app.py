@@ -135,6 +135,6 @@ if st.button("Prediksi"):
             # 1 = Negatif
 
             if pred == 0:
-                st.success("😌 Sentimen Positif")
+                st.success("😔 Sentimen Negatif")
             else:
-                st.error("😔 Sentimen Negatif")
+                st.error("😌 Sentimen Positif")
