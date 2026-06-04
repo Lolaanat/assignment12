@@ -25,18 +25,11 @@ model = model_package["model"]
 # =====================================================
 
 STOPWORDS_ID = {
-    'yang', 'dan', 'di', 'ke', 'dari', 'ini', 'itu',
-    'dengan', 'untuk', 'adalah', 'ada', 'atau', 'juga',
-    'pada', 'dalam', 'saya', 'kami', 'kita', 'anda',
-    'mereka', 'dia', 'ia', 'nya', 'akan', 'sudah',
-    'telah', 'bukan', 'jangan',
-    'lebih', 'sekali', 'paling', 'bisa',
-    'dapat', 'seperti', 'saat', 'serta', 'oleh',
-    'agar', 'tetapi', 'namun', 'karena', 'jika',
-    'kalau', 'maka', 'lalu', 'kemudian', 'pun',
-    'lah', 'kah', 'deh', 'dong', 'sih', 'kok',
-    'ya', 'yah', 'oh', 'eh', 'ah', 'ih', 'uh',
-    'wah', 'hah', 'hem', 'hmm'
+    'yang','dan','di','ke','dari','ini','itu',
+    'dengan','untuk','adalah','ada','atau','juga',
+    'pada','dalam','saya','kami','kita','anda',
+    'mereka','dia','ia','nya','akan','sudah',
+    'telah','bukan','jangan'
 }
 
 
