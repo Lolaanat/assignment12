@@ -98,6 +98,7 @@ st.title("Analisis Sentimen Review 🌟")
 
 st.write(
     "Ini merupakan web analisis sentimen Leora Natania - 2702217195."
+    <b>
     "Masukkan kalimat atau review untuk mengetahui sentimennya."
 )
 
